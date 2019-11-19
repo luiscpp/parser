@@ -1,0 +1,10 @@
+INICIAR PROCESO(){
+	SI(a<b){
+		IMPRIMIR("hola mundo");
+	}SINO_SI(q>w){
+		c<-b;
+	}SINO{
+		q<-p;
+		LEER(s);
+	}
+}

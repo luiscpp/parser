@@ -1,0 +1,2512 @@
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 14 resolved using rule 52 (ciclocondicion -> ciclofor .).
+reduce/reduce conflict in state 76 resolved using rule 14 (cambiovalor -> NUMERO .).
+reduce/reduce conflict in state 76 resolved using rule 14 (cambiovalor -> NUMERO .).
+reduce/reduce conflict in state 80 resolved using rule 13 (cambiovalor -> ID .).
+reduce/reduce conflict in state 80 resolved using rule 13 (cambiovalor -> ID .).
+reduce/reduce conflict in state 95 resolved using rule 71 (condicion -> operando tipoconector operando .).
+reduce/reduce conflict in state 95 resolved using rule 71 (condicion -> operando tipoconector operando .).
+reduce/reduce conflict in state 95 resolved using rule 71 (condicion -> operando tipoconector operando .).
+reduce/reduce conflict in state 131 resolved using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .).
+reduce/reduce conflict in state 131 resolved using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .).
+reduce/reduce conflict in state 131 resolved using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .).
+
+
+Unused terminals:
+
+
+Grammar
+
+Rule 1     block -> INICIAR PROCESO I_PAR D_PAR I_LL lineascodigos D_LL
+Rule 2     lineascodigos -> lineacodigo
+Rule 3     lineascodigos -> <empty>
+Rule 4     lineacodigo -> lineacodigo linea
+Rule 5     lineacodigo -> linea
+Rule 6     linea -> imprimir PUNTO_COMA
+Rule 7     linea -> leer PUNTO_COMA
+Rule 8     linea -> crearvariable PUNTO_COMA
+Rule 9     linea -> cambiarvalor PUNTO_COMA
+Rule 10    linea -> incrementardisminuir PUNTO_COMA
+Rule 11    linea -> ciclocondicion
+Rule 12    cambiarvalor -> ID ASIG cambiovalor
+Rule 13    cambiovalor -> ID
+Rule 14    cambiovalor -> NUMERO
+Rule 15    cambiovalor -> aritmetica
+Rule 16    operacionasignacion -> aritmetica
+Rule 17    incrementardisminuir -> ID tipoincrementardisminuir
+Rule 18    tipoincrementardisminuir -> INC
+Rule 19    tipoincrementardisminuir -> DIS
+Rule 20    imprimir -> IMPRIMIR I_PAR tipoimprimir D_PAR
+Rule 21    leer -> LEER I_PAR tipoimprimir D_PAR
+Rule 22    aritmetica -> operacioncomun
+Rule 23    asignarvalor -> ASIG NUMERO
+Rule 24    asignarvalor -> ASIG ID
+Rule 25    operacioncomun -> operando operador operando
+Rule 26    operacioncomun -> operando operador operando operador operacioncomun
+Rule 27    operacioncomun -> operando
+Rule 28    operador -> MAS
+Rule 29    operador -> MENOS
+Rule 30    operador -> MULT
+Rule 31    operador -> DIV
+Rule 32    operador -> DIF
+Rule 33    operador -> IGUAL
+Rule 34    operando -> NUMERO
+Rule 35    operando -> ID
+Rule 36    tipoimprimir -> ID
+Rule 37    tipoimprimir -> CADENA
+Rule 38    tipoimprimir -> NUMERO
+Rule 39    tipoimprimir -> CADENA MAS tipoimprimir
+Rule 40    tipoimprimir -> ID MAS tipoimprimir
+Rule 41    tipoimprimir -> NUMERO MAS imprimir
+Rule 42    crearvariable -> VAR ID
+Rule 43    crearvariable -> VAR ID asignarvalor
+Rule 44    crearvariable -> VAR ID asignarvalor COMA otravariable
+Rule 45    crearvariable -> VAR ID COMA otravariable
+Rule 46    otravariable -> ID
+Rule 47    otravariable -> ID COMA otravariable
+Rule 48    otravariable -> ID asignarvalor
+Rule 49    otravariable -> ID asignarvalor COMA otravariable
+Rule 50    ciclocondicion -> condicional
+Rule 51    ciclocondicion -> mientras
+Rule 52    ciclocondicion -> ciclofor
+Rule 53    mientras -> MIENTRAS condicion I_LL lineacodigo D_LL
+Rule 54    condicional -> condicionsi
+Rule 55    condicional -> condicionsi condicionno
+Rule 56    condicional -> condicionsi condicionsino condicionno
+Rule 57    condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+Rule 58    condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+Rule 59    condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL condicionsino
+Rule 60    condicionno -> SINO I_LL lineacodigo D_LL
+Rule 61    conectorlogico -> Y
+Rule 62    conectorlogico -> O
+Rule 63    tipocondicion -> LT
+Rule 64    tipocondicion -> LTE
+Rule 65    tipocondicion -> GT
+Rule 66    tipocondicion -> GTE
+Rule 67    tipocondicion -> IGUAL
+Rule 68    tipocondicion -> DIF
+Rule 69    tipoconector -> conectorlogico
+Rule 70    tipoconector -> tipocondicion
+Rule 71    condicion -> operando tipoconector operando
+Rule 72    condicion -> operando tipoconector operando tipoconector condicion
+Rule 73    condicion -> NEG operando tipoconector condicion
+Rule 74    condicion -> NEG operando
+Rule 75    condicion -> operando
+Rule 76    condicion -> operando tipoconector condicion
+Rule 77    incrementofor -> cambiarvalor
+Rule 78    incrementofor -> incrementardisminuir
+Rule 79    iniciofor -> VAR ID asignarvalor
+Rule 80    iniciofor -> ID asignarvalor
+Rule 81    ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+Rule 82    ciclofor -> ciclofor
+
+Terminals, with rules where they appear
+
+ASIG                 : 12 23 24
+CADENA               : 37 39
+COMA                 : 44 45 47 49
+DIF                  : 32 68
+DIS                  : 19
+DIV                  : 31
+D_LL                 : 1 53 57 58 59 60 81
+D_PAR                : 1 20 21 57 58 59 81
+GT                   : 65
+GTE                  : 66
+ID                   : 12 13 17 24 35 36 40 42 43 44 45 46 47 48 49 79 80
+IGUAL                : 33 67
+IMPRIMIR             : 20
+INC                  : 18
+INICIAR              : 1
+I_LL                 : 1 53 57 58 59 60 81
+I_PAR                : 1 20 21 57 58 59 81
+LEER                 : 21
+LT                   : 63
+LTE                  : 64
+MAS                  : 28 39 40 41
+MENOS                : 29
+MIENTRAS             : 53
+MULT                 : 30
+NEG                  : 73 74
+NUMERO               : 14 23 34 38 41
+O                    : 62
+PARA                 : 81
+PROCESO              : 1
+PUNTO_COMA           : 6 7 8 9 10 81 81
+SI                   : 57
+SINO                 : 60
+SINO_SI              : 58 59
+VAR                  : 42 43 44 45 79
+Y                    : 61
+error                : 
+
+Nonterminals, with rules where they appear
+
+aritmetica           : 15 16
+asignarvalor         : 43 44 48 49 79 80
+block                : 0
+cambiarvalor         : 9 77
+cambiovalor          : 12
+ciclocondicion       : 11
+ciclofor             : 52 82
+condicion            : 53 57 58 59 72 73 76 81
+condicional          : 50
+condicionno          : 55 56
+condicionsi          : 54 55 56
+condicionsino        : 56 59
+conectorlogico       : 69
+crearvariable        : 8
+imprimir             : 6 41
+incrementardisminuir : 10 78
+incrementofor        : 81
+iniciofor            : 81
+leer                 : 7
+linea                : 4 5
+lineacodigo          : 2 4 53 57 58 59 60 81
+lineascodigos        : 1
+mientras             : 51
+operacionasignacion  : 
+operacioncomun       : 22 26
+operador             : 25 26 26
+operando             : 25 25 26 26 27 71 71 72 72 73 74 75 76
+otravariable         : 44 45 47 49
+tipocondicion        : 70
+tipoconector         : 71 72 72 73 76
+tipoimprimir         : 20 21 39 40
+tipoincrementardisminuir : 17
+
+
+Parsing method: LALR
+
+
+state 0
+
+    (0) S' -> . block
+    (1) block -> . INICIAR PROCESO I_PAR D_PAR I_LL lineascodigos D_LL
+
+    INICIAR         shift and go to state 1
+
+
+    block                          shift and go to state 2
+
+state 1
+
+    (1) block -> INICIAR . PROCESO I_PAR D_PAR I_LL lineascodigos D_LL
+
+    PROCESO         shift and go to state 3
+
+
+
+state 2
+
+    (0) S' -> block .
+
+
+
+
+state 3
+
+    (1) block -> INICIAR PROCESO . I_PAR D_PAR I_LL lineascodigos D_LL
+
+    I_PAR           shift and go to state 4
+
+
+
+state 4
+
+    (1) block -> INICIAR PROCESO I_PAR . D_PAR I_LL lineascodigos D_LL
+
+    D_PAR           shift and go to state 5
+
+
+
+state 5
+
+    (1) block -> INICIAR PROCESO I_PAR D_PAR . I_LL lineascodigos D_LL
+
+    I_LL            shift and go to state 6
+
+
+
+state 6
+
+    (1) block -> INICIAR PROCESO I_PAR D_PAR I_LL . lineascodigos D_LL
+    (2) lineascodigos -> . lineacodigo
+    (3) lineascodigos -> .
+    (4) lineacodigo -> . lineacodigo linea
+    (5) lineacodigo -> . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            reduce using rule 3 (lineascodigos -> .)
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    lineacodigo                    shift and go to state 12
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    lineascodigos                  shift and go to state 24
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 26
+
+state 7
+
+    (81) ciclofor -> PARA . I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+
+    I_PAR           shift and go to state 27
+
+
+
+state 8
+
+    (7) linea -> leer . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 28
+
+
+
+state 9
+
+    (9) linea -> cambiarvalor . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 29
+
+
+
+state 10
+
+    (57) condicionsi -> SI . I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    I_PAR           shift and go to state 30
+
+
+
+state 11
+
+    (54) condicional -> condicionsi .
+    (55) condicional -> condicionsi . condicionno
+    (56) condicional -> condicionsi . condicionsino condicionno
+    (60) condicionno -> . SINO I_LL lineacodigo D_LL
+    (58) condicionsino -> . SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+    (59) condicionsino -> . SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL condicionsino
+
+    D_LL            reduce using rule 54 (condicional -> condicionsi .)
+    IMPRIMIR        reduce using rule 54 (condicional -> condicionsi .)
+    LEER            reduce using rule 54 (condicional -> condicionsi .)
+    VAR             reduce using rule 54 (condicional -> condicionsi .)
+    ID              reduce using rule 54 (condicional -> condicionsi .)
+    MIENTRAS        reduce using rule 54 (condicional -> condicionsi .)
+    PARA            reduce using rule 54 (condicional -> condicionsi .)
+    SI              reduce using rule 54 (condicional -> condicionsi .)
+    SINO            shift and go to state 33
+    SINO_SI         shift and go to state 32
+
+
+    condicionno                    shift and go to state 31
+    condicionsino                  shift and go to state 34
+
+state 12
+
+    (2) lineascodigos -> lineacodigo .
+    (4) lineacodigo -> lineacodigo . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            reduce using rule 2 (lineascodigos -> lineacodigo .)
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 35
+
+state 13
+
+    (50) ciclocondicion -> condicional .
+
+    D_LL            reduce using rule 50 (ciclocondicion -> condicional .)
+    IMPRIMIR        reduce using rule 50 (ciclocondicion -> condicional .)
+    LEER            reduce using rule 50 (ciclocondicion -> condicional .)
+    VAR             reduce using rule 50 (ciclocondicion -> condicional .)
+    ID              reduce using rule 50 (ciclocondicion -> condicional .)
+    MIENTRAS        reduce using rule 50 (ciclocondicion -> condicional .)
+    PARA            reduce using rule 50 (ciclocondicion -> condicional .)
+    SI              reduce using rule 50 (ciclocondicion -> condicional .)
+
+
+
+state 14
+
+    (52) ciclocondicion -> ciclofor .
+    (82) ciclofor -> ciclofor .
+
+  ! reduce/reduce conflict for D_LL resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for IMPRIMIR resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for LEER resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for VAR resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for ID resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for MIENTRAS resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for PARA resolved using rule 52 (ciclocondicion -> ciclofor .).
+  ! reduce/reduce conflict for SI resolved using rule 52 (ciclocondicion -> ciclofor .).
+    D_LL            reduce using rule 52 (ciclocondicion -> ciclofor .)
+    IMPRIMIR        reduce using rule 52 (ciclocondicion -> ciclofor .)
+    LEER            reduce using rule 52 (ciclocondicion -> ciclofor .)
+    VAR             reduce using rule 52 (ciclocondicion -> ciclofor .)
+    ID              reduce using rule 52 (ciclocondicion -> ciclofor .)
+    MIENTRAS        reduce using rule 52 (ciclocondicion -> ciclofor .)
+    PARA            reduce using rule 52 (ciclocondicion -> ciclofor .)
+    SI              reduce using rule 52 (ciclocondicion -> ciclofor .)
+
+  ! D_LL            [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! IMPRIMIR        [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! LEER            [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! VAR             [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! ID              [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! MIENTRAS        [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! PARA            [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+  ! SI              [ reduce using rule 82 (ciclofor -> ciclofor .) ]
+
+
+state 15
+
+    (53) mientras -> MIENTRAS . condicion I_LL lineacodigo D_LL
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NEG             shift and go to state 36
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 39
+    condicion                      shift and go to state 38
+
+state 16
+
+    (11) linea -> ciclocondicion .
+
+    D_LL            reduce using rule 11 (linea -> ciclocondicion .)
+    IMPRIMIR        reduce using rule 11 (linea -> ciclocondicion .)
+    LEER            reduce using rule 11 (linea -> ciclocondicion .)
+    VAR             reduce using rule 11 (linea -> ciclocondicion .)
+    ID              reduce using rule 11 (linea -> ciclocondicion .)
+    MIENTRAS        reduce using rule 11 (linea -> ciclocondicion .)
+    PARA            reduce using rule 11 (linea -> ciclocondicion .)
+    SI              reduce using rule 11 (linea -> ciclocondicion .)
+
+
+
+state 17
+
+    (6) linea -> imprimir . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 41
+
+
+
+state 18
+
+    (42) crearvariable -> VAR . ID
+    (43) crearvariable -> VAR . ID asignarvalor
+    (44) crearvariable -> VAR . ID asignarvalor COMA otravariable
+    (45) crearvariable -> VAR . ID COMA otravariable
+
+    ID              shift and go to state 42
+
+
+
+state 19
+
+    (12) cambiarvalor -> ID . ASIG cambiovalor
+    (17) incrementardisminuir -> ID . tipoincrementardisminuir
+    (18) tipoincrementardisminuir -> . INC
+    (19) tipoincrementardisminuir -> . DIS
+
+    ASIG            shift and go to state 43
+    INC             shift and go to state 45
+    DIS             shift and go to state 46
+
+
+    tipoincrementardisminuir       shift and go to state 44
+
+state 20
+
+    (21) leer -> LEER . I_PAR tipoimprimir D_PAR
+
+    I_PAR           shift and go to state 47
+
+
+
+state 21
+
+    (51) ciclocondicion -> mientras .
+
+    D_LL            reduce using rule 51 (ciclocondicion -> mientras .)
+    IMPRIMIR        reduce using rule 51 (ciclocondicion -> mientras .)
+    LEER            reduce using rule 51 (ciclocondicion -> mientras .)
+    VAR             reduce using rule 51 (ciclocondicion -> mientras .)
+    ID              reduce using rule 51 (ciclocondicion -> mientras .)
+    MIENTRAS        reduce using rule 51 (ciclocondicion -> mientras .)
+    PARA            reduce using rule 51 (ciclocondicion -> mientras .)
+    SI              reduce using rule 51 (ciclocondicion -> mientras .)
+
+
+
+state 22
+
+    (10) linea -> incrementardisminuir . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 48
+
+
+
+state 23
+
+    (20) imprimir -> IMPRIMIR . I_PAR tipoimprimir D_PAR
+
+    I_PAR           shift and go to state 49
+
+
+
+state 24
+
+    (1) block -> INICIAR PROCESO I_PAR D_PAR I_LL lineascodigos . D_LL
+
+    D_LL            shift and go to state 50
+
+
+
+state 25
+
+    (8) linea -> crearvariable . PUNTO_COMA
+
+    PUNTO_COMA      shift and go to state 51
+
+
+
+state 26
+
+    (5) lineacodigo -> linea .
+
+    D_LL            reduce using rule 5 (lineacodigo -> linea .)
+    IMPRIMIR        reduce using rule 5 (lineacodigo -> linea .)
+    LEER            reduce using rule 5 (lineacodigo -> linea .)
+    VAR             reduce using rule 5 (lineacodigo -> linea .)
+    ID              reduce using rule 5 (lineacodigo -> linea .)
+    MIENTRAS        reduce using rule 5 (lineacodigo -> linea .)
+    PARA            reduce using rule 5 (lineacodigo -> linea .)
+    SI              reduce using rule 5 (lineacodigo -> linea .)
+
+
+
+state 27
+
+    (81) ciclofor -> PARA I_PAR . iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (79) iniciofor -> . VAR ID asignarvalor
+    (80) iniciofor -> . ID asignarvalor
+
+    VAR             shift and go to state 53
+    ID              shift and go to state 54
+
+
+    iniciofor                      shift and go to state 52
+
+state 28
+
+    (7) linea -> leer PUNTO_COMA .
+
+    D_LL            reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    IMPRIMIR        reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    LEER            reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    VAR             reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    ID              reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    MIENTRAS        reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    PARA            reduce using rule 7 (linea -> leer PUNTO_COMA .)
+    SI              reduce using rule 7 (linea -> leer PUNTO_COMA .)
+
+
+
+state 29
+
+    (9) linea -> cambiarvalor PUNTO_COMA .
+
+    D_LL            reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    IMPRIMIR        reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    LEER            reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    VAR             reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    ID              reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    MIENTRAS        reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    PARA            reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+    SI              reduce using rule 9 (linea -> cambiarvalor PUNTO_COMA .)
+
+
+
+state 30
+
+    (57) condicionsi -> SI I_PAR . condicion D_PAR I_LL lineacodigo D_LL
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NEG             shift and go to state 36
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 39
+    condicion                      shift and go to state 55
+
+state 31
+
+    (55) condicional -> condicionsi condicionno .
+
+    D_LL            reduce using rule 55 (condicional -> condicionsi condicionno .)
+    IMPRIMIR        reduce using rule 55 (condicional -> condicionsi condicionno .)
+    LEER            reduce using rule 55 (condicional -> condicionsi condicionno .)
+    VAR             reduce using rule 55 (condicional -> condicionsi condicionno .)
+    ID              reduce using rule 55 (condicional -> condicionsi condicionno .)
+    MIENTRAS        reduce using rule 55 (condicional -> condicionsi condicionno .)
+    PARA            reduce using rule 55 (condicional -> condicionsi condicionno .)
+    SI              reduce using rule 55 (condicional -> condicionsi condicionno .)
+
+
+
+state 32
+
+    (58) condicionsino -> SINO_SI . I_PAR condicion D_PAR I_LL lineacodigo D_LL
+    (59) condicionsino -> SINO_SI . I_PAR condicion D_PAR I_LL lineacodigo D_LL condicionsino
+
+    I_PAR           shift and go to state 56
+
+
+
+state 33
+
+    (60) condicionno -> SINO . I_LL lineacodigo D_LL
+
+    I_LL            shift and go to state 57
+
+
+
+state 34
+
+    (56) condicional -> condicionsi condicionsino . condicionno
+    (60) condicionno -> . SINO I_LL lineacodigo D_LL
+
+    SINO            shift and go to state 33
+
+
+    condicionno                    shift and go to state 58
+
+state 35
+
+    (4) lineacodigo -> lineacodigo linea .
+
+    D_LL            reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    IMPRIMIR        reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    LEER            reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    VAR             reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    ID              reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    MIENTRAS        reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    PARA            reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+    SI              reduce using rule 4 (lineacodigo -> lineacodigo linea .)
+
+
+
+state 36
+
+    (73) condicion -> NEG . operando tipoconector condicion
+    (74) condicion -> NEG . operando
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 59
+
+state 37
+
+    (34) operando -> NUMERO .
+
+    Y               reduce using rule 34 (operando -> NUMERO .)
+    O               reduce using rule 34 (operando -> NUMERO .)
+    LT              reduce using rule 34 (operando -> NUMERO .)
+    LTE             reduce using rule 34 (operando -> NUMERO .)
+    GT              reduce using rule 34 (operando -> NUMERO .)
+    GTE             reduce using rule 34 (operando -> NUMERO .)
+    IGUAL           reduce using rule 34 (operando -> NUMERO .)
+    DIF             reduce using rule 34 (operando -> NUMERO .)
+    D_PAR           reduce using rule 34 (operando -> NUMERO .)
+    I_LL            reduce using rule 34 (operando -> NUMERO .)
+    PUNTO_COMA      reduce using rule 34 (operando -> NUMERO .)
+    MAS             reduce using rule 34 (operando -> NUMERO .)
+    MENOS           reduce using rule 34 (operando -> NUMERO .)
+    MULT            reduce using rule 34 (operando -> NUMERO .)
+    DIV             reduce using rule 34 (operando -> NUMERO .)
+
+
+
+state 38
+
+    (53) mientras -> MIENTRAS condicion . I_LL lineacodigo D_LL
+
+    I_LL            shift and go to state 60
+
+
+
+state 39
+
+    (71) condicion -> operando . tipoconector operando
+    (72) condicion -> operando . tipoconector operando tipoconector condicion
+    (75) condicion -> operando .
+    (76) condicion -> operando . tipoconector condicion
+    (69) tipoconector -> . conectorlogico
+    (70) tipoconector -> . tipocondicion
+    (61) conectorlogico -> . Y
+    (62) conectorlogico -> . O
+    (63) tipocondicion -> . LT
+    (64) tipocondicion -> . LTE
+    (65) tipocondicion -> . GT
+    (66) tipocondicion -> . GTE
+    (67) tipocondicion -> . IGUAL
+    (68) tipocondicion -> . DIF
+
+    PUNTO_COMA      reduce using rule 75 (condicion -> operando .)
+    I_LL            reduce using rule 75 (condicion -> operando .)
+    D_PAR           reduce using rule 75 (condicion -> operando .)
+    Y               shift and go to state 70
+    O               shift and go to state 66
+    LT              shift and go to state 68
+    LTE             shift and go to state 69
+    GT              shift and go to state 62
+    GTE             shift and go to state 63
+    IGUAL           shift and go to state 67
+    DIF             shift and go to state 64
+
+
+    tipoconector                   shift and go to state 61
+    conectorlogico                 shift and go to state 65
+    tipocondicion                  shift and go to state 71
+
+state 40
+
+    (35) operando -> ID .
+
+    Y               reduce using rule 35 (operando -> ID .)
+    O               reduce using rule 35 (operando -> ID .)
+    LT              reduce using rule 35 (operando -> ID .)
+    LTE             reduce using rule 35 (operando -> ID .)
+    GT              reduce using rule 35 (operando -> ID .)
+    GTE             reduce using rule 35 (operando -> ID .)
+    IGUAL           reduce using rule 35 (operando -> ID .)
+    DIF             reduce using rule 35 (operando -> ID .)
+    D_PAR           reduce using rule 35 (operando -> ID .)
+    I_LL            reduce using rule 35 (operando -> ID .)
+    PUNTO_COMA      reduce using rule 35 (operando -> ID .)
+    MAS             reduce using rule 35 (operando -> ID .)
+    MENOS           reduce using rule 35 (operando -> ID .)
+    MULT            reduce using rule 35 (operando -> ID .)
+    DIV             reduce using rule 35 (operando -> ID .)
+
+
+
+state 41
+
+    (6) linea -> imprimir PUNTO_COMA .
+
+    D_LL            reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    IMPRIMIR        reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    LEER            reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    VAR             reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    ID              reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    MIENTRAS        reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    PARA            reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+    SI              reduce using rule 6 (linea -> imprimir PUNTO_COMA .)
+
+
+
+state 42
+
+    (42) crearvariable -> VAR ID .
+    (43) crearvariable -> VAR ID . asignarvalor
+    (44) crearvariable -> VAR ID . asignarvalor COMA otravariable
+    (45) crearvariable -> VAR ID . COMA otravariable
+    (23) asignarvalor -> . ASIG NUMERO
+    (24) asignarvalor -> . ASIG ID
+
+    PUNTO_COMA      reduce using rule 42 (crearvariable -> VAR ID .)
+    COMA            shift and go to state 74
+    ASIG            shift and go to state 72
+
+
+    asignarvalor                   shift and go to state 73
+
+state 43
+
+    (12) cambiarvalor -> ID ASIG . cambiovalor
+    (13) cambiovalor -> . ID
+    (14) cambiovalor -> . NUMERO
+    (15) cambiovalor -> . aritmetica
+    (22) aritmetica -> . operacioncomun
+    (25) operacioncomun -> . operando operador operando
+    (26) operacioncomun -> . operando operador operando operador operacioncomun
+    (27) operacioncomun -> . operando
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    ID              shift and go to state 80
+    NUMERO          shift and go to state 76
+
+
+    operando                       shift and go to state 79
+    cambiovalor                    shift and go to state 75
+    aritmetica                     shift and go to state 78
+    operacioncomun                 shift and go to state 77
+
+state 44
+
+    (17) incrementardisminuir -> ID tipoincrementardisminuir .
+
+    PUNTO_COMA      reduce using rule 17 (incrementardisminuir -> ID tipoincrementardisminuir .)
+    D_PAR           reduce using rule 17 (incrementardisminuir -> ID tipoincrementardisminuir .)
+
+
+
+state 45
+
+    (18) tipoincrementardisminuir -> INC .
+
+    PUNTO_COMA      reduce using rule 18 (tipoincrementardisminuir -> INC .)
+    D_PAR           reduce using rule 18 (tipoincrementardisminuir -> INC .)
+
+
+
+state 46
+
+    (19) tipoincrementardisminuir -> DIS .
+
+    PUNTO_COMA      reduce using rule 19 (tipoincrementardisminuir -> DIS .)
+    D_PAR           reduce using rule 19 (tipoincrementardisminuir -> DIS .)
+
+
+
+state 47
+
+    (21) leer -> LEER I_PAR . tipoimprimir D_PAR
+    (36) tipoimprimir -> . ID
+    (37) tipoimprimir -> . CADENA
+    (38) tipoimprimir -> . NUMERO
+    (39) tipoimprimir -> . CADENA MAS tipoimprimir
+    (40) tipoimprimir -> . ID MAS tipoimprimir
+    (41) tipoimprimir -> . NUMERO MAS imprimir
+
+    ID              shift and go to state 84
+    CADENA          shift and go to state 83
+    NUMERO          shift and go to state 82
+
+
+    tipoimprimir                   shift and go to state 81
+
+state 48
+
+    (10) linea -> incrementardisminuir PUNTO_COMA .
+
+    D_LL            reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    IMPRIMIR        reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    LEER            reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    VAR             reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    ID              reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    MIENTRAS        reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    PARA            reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+    SI              reduce using rule 10 (linea -> incrementardisminuir PUNTO_COMA .)
+
+
+
+state 49
+
+    (20) imprimir -> IMPRIMIR I_PAR . tipoimprimir D_PAR
+    (36) tipoimprimir -> . ID
+    (37) tipoimprimir -> . CADENA
+    (38) tipoimprimir -> . NUMERO
+    (39) tipoimprimir -> . CADENA MAS tipoimprimir
+    (40) tipoimprimir -> . ID MAS tipoimprimir
+    (41) tipoimprimir -> . NUMERO MAS imprimir
+
+    ID              shift and go to state 84
+    CADENA          shift and go to state 83
+    NUMERO          shift and go to state 82
+
+
+    tipoimprimir                   shift and go to state 85
+
+state 50
+
+    (1) block -> INICIAR PROCESO I_PAR D_PAR I_LL lineascodigos D_LL .
+
+    $end            reduce using rule 1 (block -> INICIAR PROCESO I_PAR D_PAR I_LL lineascodigos D_LL .)
+
+
+
+state 51
+
+    (8) linea -> crearvariable PUNTO_COMA .
+
+    D_LL            reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    IMPRIMIR        reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    LEER            reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    VAR             reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    ID              reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    MIENTRAS        reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    PARA            reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+    SI              reduce using rule 8 (linea -> crearvariable PUNTO_COMA .)
+
+
+
+state 52
+
+    (81) ciclofor -> PARA I_PAR iniciofor . PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+
+    PUNTO_COMA      shift and go to state 86
+
+
+
+state 53
+
+    (79) iniciofor -> VAR . ID asignarvalor
+
+    ID              shift and go to state 87
+
+
+
+state 54
+
+    (80) iniciofor -> ID . asignarvalor
+    (23) asignarvalor -> . ASIG NUMERO
+    (24) asignarvalor -> . ASIG ID
+
+    ASIG            shift and go to state 72
+
+
+    asignarvalor                   shift and go to state 88
+
+state 55
+
+    (57) condicionsi -> SI I_PAR condicion . D_PAR I_LL lineacodigo D_LL
+
+    D_PAR           shift and go to state 89
+
+
+
+state 56
+
+    (58) condicionsino -> SINO_SI I_PAR . condicion D_PAR I_LL lineacodigo D_LL
+    (59) condicionsino -> SINO_SI I_PAR . condicion D_PAR I_LL lineacodigo D_LL condicionsino
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NEG             shift and go to state 36
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 39
+    condicion                      shift and go to state 90
+
+state 57
+
+    (60) condicionno -> SINO I_LL . lineacodigo D_LL
+    (4) lineacodigo -> . lineacodigo linea
+    (5) lineacodigo -> . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    lineacodigo                    shift and go to state 91
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 26
+
+state 58
+
+    (56) condicional -> condicionsi condicionsino condicionno .
+
+    D_LL            reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    IMPRIMIR        reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    LEER            reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    VAR             reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    ID              reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    MIENTRAS        reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    PARA            reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+    SI              reduce using rule 56 (condicional -> condicionsi condicionsino condicionno .)
+
+
+
+state 59
+
+    (73) condicion -> NEG operando . tipoconector condicion
+    (74) condicion -> NEG operando .
+    (69) tipoconector -> . conectorlogico
+    (70) tipoconector -> . tipocondicion
+    (61) conectorlogico -> . Y
+    (62) conectorlogico -> . O
+    (63) tipocondicion -> . LT
+    (64) tipocondicion -> . LTE
+    (65) tipocondicion -> . GT
+    (66) tipocondicion -> . GTE
+    (67) tipocondicion -> . IGUAL
+    (68) tipocondicion -> . DIF
+
+    I_LL            reduce using rule 74 (condicion -> NEG operando .)
+    D_PAR           reduce using rule 74 (condicion -> NEG operando .)
+    PUNTO_COMA      reduce using rule 74 (condicion -> NEG operando .)
+    Y               shift and go to state 70
+    O               shift and go to state 66
+    LT              shift and go to state 68
+    LTE             shift and go to state 69
+    GT              shift and go to state 62
+    GTE             shift and go to state 63
+    IGUAL           shift and go to state 67
+    DIF             shift and go to state 64
+
+
+    tipoconector                   shift and go to state 92
+    conectorlogico                 shift and go to state 65
+    tipocondicion                  shift and go to state 71
+
+state 60
+
+    (53) mientras -> MIENTRAS condicion I_LL . lineacodigo D_LL
+    (4) lineacodigo -> . lineacodigo linea
+    (5) lineacodigo -> . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    lineacodigo                    shift and go to state 93
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 26
+
+state 61
+
+    (71) condicion -> operando tipoconector . operando
+    (72) condicion -> operando tipoconector . operando tipoconector condicion
+    (76) condicion -> operando tipoconector . condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+    NEG             shift and go to state 36
+
+
+    operando                       shift and go to state 95
+    condicion                      shift and go to state 94
+
+state 62
+
+    (65) tipocondicion -> GT .
+
+    NUMERO          reduce using rule 65 (tipocondicion -> GT .)
+    ID              reduce using rule 65 (tipocondicion -> GT .)
+    NEG             reduce using rule 65 (tipocondicion -> GT .)
+
+
+
+state 63
+
+    (66) tipocondicion -> GTE .
+
+    NUMERO          reduce using rule 66 (tipocondicion -> GTE .)
+    ID              reduce using rule 66 (tipocondicion -> GTE .)
+    NEG             reduce using rule 66 (tipocondicion -> GTE .)
+
+
+
+state 64
+
+    (68) tipocondicion -> DIF .
+
+    NUMERO          reduce using rule 68 (tipocondicion -> DIF .)
+    ID              reduce using rule 68 (tipocondicion -> DIF .)
+    NEG             reduce using rule 68 (tipocondicion -> DIF .)
+
+
+
+state 65
+
+    (69) tipoconector -> conectorlogico .
+
+    NEG             reduce using rule 69 (tipoconector -> conectorlogico .)
+    NUMERO          reduce using rule 69 (tipoconector -> conectorlogico .)
+    ID              reduce using rule 69 (tipoconector -> conectorlogico .)
+
+
+
+state 66
+
+    (62) conectorlogico -> O .
+
+    NEG             reduce using rule 62 (conectorlogico -> O .)
+    NUMERO          reduce using rule 62 (conectorlogico -> O .)
+    ID              reduce using rule 62 (conectorlogico -> O .)
+
+
+
+state 67
+
+    (67) tipocondicion -> IGUAL .
+
+    NUMERO          reduce using rule 67 (tipocondicion -> IGUAL .)
+    ID              reduce using rule 67 (tipocondicion -> IGUAL .)
+    NEG             reduce using rule 67 (tipocondicion -> IGUAL .)
+
+
+
+state 68
+
+    (63) tipocondicion -> LT .
+
+    NUMERO          reduce using rule 63 (tipocondicion -> LT .)
+    ID              reduce using rule 63 (tipocondicion -> LT .)
+    NEG             reduce using rule 63 (tipocondicion -> LT .)
+
+
+
+state 69
+
+    (64) tipocondicion -> LTE .
+
+    NUMERO          reduce using rule 64 (tipocondicion -> LTE .)
+    ID              reduce using rule 64 (tipocondicion -> LTE .)
+    NEG             reduce using rule 64 (tipocondicion -> LTE .)
+
+
+
+state 70
+
+    (61) conectorlogico -> Y .
+
+    NEG             reduce using rule 61 (conectorlogico -> Y .)
+    NUMERO          reduce using rule 61 (conectorlogico -> Y .)
+    ID              reduce using rule 61 (conectorlogico -> Y .)
+
+
+
+state 71
+
+    (70) tipoconector -> tipocondicion .
+
+    NEG             reduce using rule 70 (tipoconector -> tipocondicion .)
+    NUMERO          reduce using rule 70 (tipoconector -> tipocondicion .)
+    ID              reduce using rule 70 (tipoconector -> tipocondicion .)
+
+
+
+state 72
+
+    (23) asignarvalor -> ASIG . NUMERO
+    (24) asignarvalor -> ASIG . ID
+
+    NUMERO          shift and go to state 97
+    ID              shift and go to state 96
+
+
+
+state 73
+
+    (43) crearvariable -> VAR ID asignarvalor .
+    (44) crearvariable -> VAR ID asignarvalor . COMA otravariable
+
+    PUNTO_COMA      reduce using rule 43 (crearvariable -> VAR ID asignarvalor .)
+    COMA            shift and go to state 98
+
+
+
+state 74
+
+    (45) crearvariable -> VAR ID COMA . otravariable
+    (46) otravariable -> . ID
+    (47) otravariable -> . ID COMA otravariable
+    (48) otravariable -> . ID asignarvalor
+    (49) otravariable -> . ID asignarvalor COMA otravariable
+
+    ID              shift and go to state 100
+
+
+    otravariable                   shift and go to state 99
+
+state 75
+
+    (12) cambiarvalor -> ID ASIG cambiovalor .
+
+    PUNTO_COMA      reduce using rule 12 (cambiarvalor -> ID ASIG cambiovalor .)
+    D_PAR           reduce using rule 12 (cambiarvalor -> ID ASIG cambiovalor .)
+
+
+
+state 76
+
+    (14) cambiovalor -> NUMERO .
+    (34) operando -> NUMERO .
+
+  ! reduce/reduce conflict for PUNTO_COMA resolved using rule 14 (cambiovalor -> NUMERO .).
+  ! reduce/reduce conflict for D_PAR resolved using rule 14 (cambiovalor -> NUMERO .).
+    PUNTO_COMA      reduce using rule 14 (cambiovalor -> NUMERO .)
+    D_PAR           reduce using rule 14 (cambiovalor -> NUMERO .)
+    MAS             reduce using rule 34 (operando -> NUMERO .)
+    MENOS           reduce using rule 34 (operando -> NUMERO .)
+    MULT            reduce using rule 34 (operando -> NUMERO .)
+    DIV             reduce using rule 34 (operando -> NUMERO .)
+    DIF             reduce using rule 34 (operando -> NUMERO .)
+    IGUAL           reduce using rule 34 (operando -> NUMERO .)
+
+  ! PUNTO_COMA      [ reduce using rule 34 (operando -> NUMERO .) ]
+  ! D_PAR           [ reduce using rule 34 (operando -> NUMERO .) ]
+
+
+state 77
+
+    (22) aritmetica -> operacioncomun .
+
+    PUNTO_COMA      reduce using rule 22 (aritmetica -> operacioncomun .)
+    D_PAR           reduce using rule 22 (aritmetica -> operacioncomun .)
+
+
+
+state 78
+
+    (15) cambiovalor -> aritmetica .
+
+    PUNTO_COMA      reduce using rule 15 (cambiovalor -> aritmetica .)
+    D_PAR           reduce using rule 15 (cambiovalor -> aritmetica .)
+
+
+
+state 79
+
+    (25) operacioncomun -> operando . operador operando
+    (26) operacioncomun -> operando . operador operando operador operacioncomun
+    (27) operacioncomun -> operando .
+    (28) operador -> . MAS
+    (29) operador -> . MENOS
+    (30) operador -> . MULT
+    (31) operador -> . DIV
+    (32) operador -> . DIF
+    (33) operador -> . IGUAL
+
+    PUNTO_COMA      reduce using rule 27 (operacioncomun -> operando .)
+    D_PAR           reduce using rule 27 (operacioncomun -> operando .)
+    MAS             shift and go to state 101
+    MENOS           shift and go to state 105
+    MULT            shift and go to state 107
+    DIV             shift and go to state 106
+    DIF             shift and go to state 103
+    IGUAL           shift and go to state 104
+
+
+    operador                       shift and go to state 102
+
+state 80
+
+    (13) cambiovalor -> ID .
+    (35) operando -> ID .
+
+  ! reduce/reduce conflict for PUNTO_COMA resolved using rule 13 (cambiovalor -> ID .).
+  ! reduce/reduce conflict for D_PAR resolved using rule 13 (cambiovalor -> ID .).
+    PUNTO_COMA      reduce using rule 13 (cambiovalor -> ID .)
+    D_PAR           reduce using rule 13 (cambiovalor -> ID .)
+    MAS             reduce using rule 35 (operando -> ID .)
+    MENOS           reduce using rule 35 (operando -> ID .)
+    MULT            reduce using rule 35 (operando -> ID .)
+    DIV             reduce using rule 35 (operando -> ID .)
+    DIF             reduce using rule 35 (operando -> ID .)
+    IGUAL           reduce using rule 35 (operando -> ID .)
+
+  ! PUNTO_COMA      [ reduce using rule 35 (operando -> ID .) ]
+  ! D_PAR           [ reduce using rule 35 (operando -> ID .) ]
+
+
+state 81
+
+    (21) leer -> LEER I_PAR tipoimprimir . D_PAR
+
+    D_PAR           shift and go to state 108
+
+
+
+state 82
+
+    (38) tipoimprimir -> NUMERO .
+    (41) tipoimprimir -> NUMERO . MAS imprimir
+
+    D_PAR           reduce using rule 38 (tipoimprimir -> NUMERO .)
+    MAS             shift and go to state 109
+
+
+
+state 83
+
+    (37) tipoimprimir -> CADENA .
+    (39) tipoimprimir -> CADENA . MAS tipoimprimir
+
+    D_PAR           reduce using rule 37 (tipoimprimir -> CADENA .)
+    MAS             shift and go to state 110
+
+
+
+state 84
+
+    (36) tipoimprimir -> ID .
+    (40) tipoimprimir -> ID . MAS tipoimprimir
+
+    D_PAR           reduce using rule 36 (tipoimprimir -> ID .)
+    MAS             shift and go to state 111
+
+
+
+state 85
+
+    (20) imprimir -> IMPRIMIR I_PAR tipoimprimir . D_PAR
+
+    D_PAR           shift and go to state 112
+
+
+
+state 86
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA . condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NEG             shift and go to state 36
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    condicion                      shift and go to state 113
+    operando                       shift and go to state 39
+
+state 87
+
+    (79) iniciofor -> VAR ID . asignarvalor
+    (23) asignarvalor -> . ASIG NUMERO
+    (24) asignarvalor -> . ASIG ID
+
+    ASIG            shift and go to state 72
+
+
+    asignarvalor                   shift and go to state 114
+
+state 88
+
+    (80) iniciofor -> ID asignarvalor .
+
+    PUNTO_COMA      reduce using rule 80 (iniciofor -> ID asignarvalor .)
+
+
+
+state 89
+
+    (57) condicionsi -> SI I_PAR condicion D_PAR . I_LL lineacodigo D_LL
+
+    I_LL            shift and go to state 115
+
+
+
+state 90
+
+    (58) condicionsino -> SINO_SI I_PAR condicion . D_PAR I_LL lineacodigo D_LL
+    (59) condicionsino -> SINO_SI I_PAR condicion . D_PAR I_LL lineacodigo D_LL condicionsino
+
+    D_PAR           shift and go to state 116
+
+
+
+state 91
+
+    (60) condicionno -> SINO I_LL lineacodigo . D_LL
+    (4) lineacodigo -> lineacodigo . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            shift and go to state 117
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 35
+
+state 92
+
+    (73) condicion -> NEG operando tipoconector . condicion
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NEG             shift and go to state 36
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 39
+    condicion                      shift and go to state 118
+
+state 93
+
+    (53) mientras -> MIENTRAS condicion I_LL lineacodigo . D_LL
+    (4) lineacodigo -> lineacodigo . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            shift and go to state 119
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 35
+
+state 94
+
+    (76) condicion -> operando tipoconector condicion .
+
+    PUNTO_COMA      reduce using rule 76 (condicion -> operando tipoconector condicion .)
+    I_LL            reduce using rule 76 (condicion -> operando tipoconector condicion .)
+    D_PAR           reduce using rule 76 (condicion -> operando tipoconector condicion .)
+
+
+
+state 95
+
+    (71) condicion -> operando tipoconector operando .
+    (72) condicion -> operando tipoconector operando . tipoconector condicion
+    (71) condicion -> operando . tipoconector operando
+    (72) condicion -> operando . tipoconector operando tipoconector condicion
+    (75) condicion -> operando .
+    (76) condicion -> operando . tipoconector condicion
+    (69) tipoconector -> . conectorlogico
+    (70) tipoconector -> . tipocondicion
+    (61) conectorlogico -> . Y
+    (62) conectorlogico -> . O
+    (63) tipocondicion -> . LT
+    (64) tipocondicion -> . LTE
+    (65) tipocondicion -> . GT
+    (66) tipocondicion -> . GTE
+    (67) tipocondicion -> . IGUAL
+    (68) tipocondicion -> . DIF
+
+  ! reduce/reduce conflict for I_LL resolved using rule 71 (condicion -> operando tipoconector operando .).
+  ! reduce/reduce conflict for D_PAR resolved using rule 71 (condicion -> operando tipoconector operando .).
+  ! reduce/reduce conflict for PUNTO_COMA resolved using rule 71 (condicion -> operando tipoconector operando .).
+    I_LL            reduce using rule 71 (condicion -> operando tipoconector operando .)
+    D_PAR           reduce using rule 71 (condicion -> operando tipoconector operando .)
+    PUNTO_COMA      reduce using rule 71 (condicion -> operando tipoconector operando .)
+    Y               shift and go to state 70
+    O               shift and go to state 66
+    LT              shift and go to state 68
+    LTE             shift and go to state 69
+    GT              shift and go to state 62
+    GTE             shift and go to state 63
+    IGUAL           shift and go to state 67
+    DIF             shift and go to state 64
+
+  ! I_LL            [ reduce using rule 75 (condicion -> operando .) ]
+  ! D_PAR           [ reduce using rule 75 (condicion -> operando .) ]
+  ! PUNTO_COMA      [ reduce using rule 75 (condicion -> operando .) ]
+
+    tipoconector                   shift and go to state 120
+    conectorlogico                 shift and go to state 65
+    tipocondicion                  shift and go to state 71
+
+state 96
+
+    (24) asignarvalor -> ASIG ID .
+
+    PUNTO_COMA      reduce using rule 24 (asignarvalor -> ASIG ID .)
+    COMA            reduce using rule 24 (asignarvalor -> ASIG ID .)
+
+
+
+state 97
+
+    (23) asignarvalor -> ASIG NUMERO .
+
+    PUNTO_COMA      reduce using rule 23 (asignarvalor -> ASIG NUMERO .)
+    COMA            reduce using rule 23 (asignarvalor -> ASIG NUMERO .)
+
+
+
+state 98
+
+    (44) crearvariable -> VAR ID asignarvalor COMA . otravariable
+    (46) otravariable -> . ID
+    (47) otravariable -> . ID COMA otravariable
+    (48) otravariable -> . ID asignarvalor
+    (49) otravariable -> . ID asignarvalor COMA otravariable
+
+    ID              shift and go to state 100
+
+
+    otravariable                   shift and go to state 121
+
+state 99
+
+    (45) crearvariable -> VAR ID COMA otravariable .
+
+    PUNTO_COMA      reduce using rule 45 (crearvariable -> VAR ID COMA otravariable .)
+
+
+
+state 100
+
+    (46) otravariable -> ID .
+    (47) otravariable -> ID . COMA otravariable
+    (48) otravariable -> ID . asignarvalor
+    (49) otravariable -> ID . asignarvalor COMA otravariable
+    (23) asignarvalor -> . ASIG NUMERO
+    (24) asignarvalor -> . ASIG ID
+
+    PUNTO_COMA      reduce using rule 46 (otravariable -> ID .)
+    COMA            shift and go to state 123
+    ASIG            shift and go to state 72
+
+
+    asignarvalor                   shift and go to state 122
+
+state 101
+
+    (28) operador -> MAS .
+
+    NUMERO          reduce using rule 28 (operador -> MAS .)
+    ID              reduce using rule 28 (operador -> MAS .)
+
+
+
+state 102
+
+    (25) operacioncomun -> operando operador . operando
+    (26) operacioncomun -> operando operador . operando operador operacioncomun
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 124
+
+state 103
+
+    (32) operador -> DIF .
+
+    NUMERO          reduce using rule 32 (operador -> DIF .)
+    ID              reduce using rule 32 (operador -> DIF .)
+
+
+
+state 104
+
+    (33) operador -> IGUAL .
+
+    NUMERO          reduce using rule 33 (operador -> IGUAL .)
+    ID              reduce using rule 33 (operador -> IGUAL .)
+
+
+
+state 105
+
+    (29) operador -> MENOS .
+
+    NUMERO          reduce using rule 29 (operador -> MENOS .)
+    ID              reduce using rule 29 (operador -> MENOS .)
+
+
+
+state 106
+
+    (31) operador -> DIV .
+
+    NUMERO          reduce using rule 31 (operador -> DIV .)
+    ID              reduce using rule 31 (operador -> DIV .)
+
+
+
+state 107
+
+    (30) operador -> MULT .
+
+    NUMERO          reduce using rule 30 (operador -> MULT .)
+    ID              reduce using rule 30 (operador -> MULT .)
+
+
+
+state 108
+
+    (21) leer -> LEER I_PAR tipoimprimir D_PAR .
+
+    PUNTO_COMA      reduce using rule 21 (leer -> LEER I_PAR tipoimprimir D_PAR .)
+
+
+
+state 109
+
+    (41) tipoimprimir -> NUMERO MAS . imprimir
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+
+    IMPRIMIR        shift and go to state 23
+
+
+    imprimir                       shift and go to state 125
+
+state 110
+
+    (39) tipoimprimir -> CADENA MAS . tipoimprimir
+    (36) tipoimprimir -> . ID
+    (37) tipoimprimir -> . CADENA
+    (38) tipoimprimir -> . NUMERO
+    (39) tipoimprimir -> . CADENA MAS tipoimprimir
+    (40) tipoimprimir -> . ID MAS tipoimprimir
+    (41) tipoimprimir -> . NUMERO MAS imprimir
+
+    ID              shift and go to state 84
+    CADENA          shift and go to state 83
+    NUMERO          shift and go to state 82
+
+
+    tipoimprimir                   shift and go to state 126
+
+state 111
+
+    (40) tipoimprimir -> ID MAS . tipoimprimir
+    (36) tipoimprimir -> . ID
+    (37) tipoimprimir -> . CADENA
+    (38) tipoimprimir -> . NUMERO
+    (39) tipoimprimir -> . CADENA MAS tipoimprimir
+    (40) tipoimprimir -> . ID MAS tipoimprimir
+    (41) tipoimprimir -> . NUMERO MAS imprimir
+
+    ID              shift and go to state 84
+    CADENA          shift and go to state 83
+    NUMERO          shift and go to state 82
+
+
+    tipoimprimir                   shift and go to state 127
+
+state 112
+
+    (20) imprimir -> IMPRIMIR I_PAR tipoimprimir D_PAR .
+
+    PUNTO_COMA      reduce using rule 20 (imprimir -> IMPRIMIR I_PAR tipoimprimir D_PAR .)
+    D_PAR           reduce using rule 20 (imprimir -> IMPRIMIR I_PAR tipoimprimir D_PAR .)
+
+
+
+state 113
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion . PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+
+    PUNTO_COMA      shift and go to state 128
+
+
+
+state 114
+
+    (79) iniciofor -> VAR ID asignarvalor .
+
+    PUNTO_COMA      reduce using rule 79 (iniciofor -> VAR ID asignarvalor .)
+
+
+
+state 115
+
+    (57) condicionsi -> SI I_PAR condicion D_PAR I_LL . lineacodigo D_LL
+    (4) lineacodigo -> . lineacodigo linea
+    (5) lineacodigo -> . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    lineacodigo                    shift and go to state 129
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 26
+
+state 116
+
+    (58) condicionsino -> SINO_SI I_PAR condicion D_PAR . I_LL lineacodigo D_LL
+    (59) condicionsino -> SINO_SI I_PAR condicion D_PAR . I_LL lineacodigo D_LL condicionsino
+
+    I_LL            shift and go to state 130
+
+
+
+state 117
+
+    (60) condicionno -> SINO I_LL lineacodigo D_LL .
+
+    IMPRIMIR        reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    LEER            reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    VAR             reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    ID              reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    MIENTRAS        reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    PARA            reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    SI              reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+    D_LL            reduce using rule 60 (condicionno -> SINO I_LL lineacodigo D_LL .)
+
+
+
+state 118
+
+    (73) condicion -> NEG operando tipoconector condicion .
+
+    I_LL            reduce using rule 73 (condicion -> NEG operando tipoconector condicion .)
+    D_PAR           reduce using rule 73 (condicion -> NEG operando tipoconector condicion .)
+    PUNTO_COMA      reduce using rule 73 (condicion -> NEG operando tipoconector condicion .)
+
+
+
+state 119
+
+    (53) mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .
+
+    D_LL            reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    IMPRIMIR        reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    LEER            reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    VAR             reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    ID              reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    MIENTRAS        reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    PARA            reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+    SI              reduce using rule 53 (mientras -> MIENTRAS condicion I_LL lineacodigo D_LL .)
+
+
+
+state 120
+
+    (72) condicion -> operando tipoconector operando tipoconector . condicion
+    (71) condicion -> operando tipoconector . operando
+    (72) condicion -> operando tipoconector . operando tipoconector condicion
+    (76) condicion -> operando tipoconector . condicion
+    (71) condicion -> . operando tipoconector operando
+    (72) condicion -> . operando tipoconector operando tipoconector condicion
+    (73) condicion -> . NEG operando tipoconector condicion
+    (74) condicion -> . NEG operando
+    (75) condicion -> . operando
+    (76) condicion -> . operando tipoconector condicion
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NEG             shift and go to state 36
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 95
+    condicion                      shift and go to state 131
+
+state 121
+
+    (44) crearvariable -> VAR ID asignarvalor COMA otravariable .
+
+    PUNTO_COMA      reduce using rule 44 (crearvariable -> VAR ID asignarvalor COMA otravariable .)
+
+
+
+state 122
+
+    (48) otravariable -> ID asignarvalor .
+    (49) otravariable -> ID asignarvalor . COMA otravariable
+
+    PUNTO_COMA      reduce using rule 48 (otravariable -> ID asignarvalor .)
+    COMA            shift and go to state 132
+
+
+
+state 123
+
+    (47) otravariable -> ID COMA . otravariable
+    (46) otravariable -> . ID
+    (47) otravariable -> . ID COMA otravariable
+    (48) otravariable -> . ID asignarvalor
+    (49) otravariable -> . ID asignarvalor COMA otravariable
+
+    ID              shift and go to state 100
+
+
+    otravariable                   shift and go to state 133
+
+state 124
+
+    (25) operacioncomun -> operando operador operando .
+    (26) operacioncomun -> operando operador operando . operador operacioncomun
+    (28) operador -> . MAS
+    (29) operador -> . MENOS
+    (30) operador -> . MULT
+    (31) operador -> . DIV
+    (32) operador -> . DIF
+    (33) operador -> . IGUAL
+
+    PUNTO_COMA      reduce using rule 25 (operacioncomun -> operando operador operando .)
+    D_PAR           reduce using rule 25 (operacioncomun -> operando operador operando .)
+    MAS             shift and go to state 101
+    MENOS           shift and go to state 105
+    MULT            shift and go to state 107
+    DIV             shift and go to state 106
+    DIF             shift and go to state 103
+    IGUAL           shift and go to state 104
+
+
+    operador                       shift and go to state 134
+
+state 125
+
+    (41) tipoimprimir -> NUMERO MAS imprimir .
+
+    D_PAR           reduce using rule 41 (tipoimprimir -> NUMERO MAS imprimir .)
+
+
+
+state 126
+
+    (39) tipoimprimir -> CADENA MAS tipoimprimir .
+
+    D_PAR           reduce using rule 39 (tipoimprimir -> CADENA MAS tipoimprimir .)
+
+
+
+state 127
+
+    (40) tipoimprimir -> ID MAS tipoimprimir .
+
+    D_PAR           reduce using rule 40 (tipoimprimir -> ID MAS tipoimprimir .)
+
+
+
+state 128
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA . incrementofor D_PAR I_LL lineacodigo D_LL
+    (77) incrementofor -> . cambiarvalor
+    (78) incrementofor -> . incrementardisminuir
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+
+    ID              shift and go to state 19
+
+
+    incrementofor                  shift and go to state 135
+    cambiarvalor                   shift and go to state 137
+    incrementardisminuir           shift and go to state 136
+
+state 129
+
+    (57) condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo . D_LL
+    (4) lineacodigo -> lineacodigo . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            shift and go to state 138
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 35
+
+state 130
+
+    (58) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL . lineacodigo D_LL
+    (59) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL . lineacodigo D_LL condicionsino
+    (4) lineacodigo -> . lineacodigo linea
+    (5) lineacodigo -> . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    lineacodigo                    shift and go to state 139
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 26
+
+state 131
+
+    (72) condicion -> operando tipoconector operando tipoconector condicion .
+    (76) condicion -> operando tipoconector condicion .
+
+  ! reduce/reduce conflict for I_LL resolved using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .).
+  ! reduce/reduce conflict for D_PAR resolved using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .).
+  ! reduce/reduce conflict for PUNTO_COMA resolved using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .).
+    I_LL            reduce using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .)
+    D_PAR           reduce using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .)
+    PUNTO_COMA      reduce using rule 72 (condicion -> operando tipoconector operando tipoconector condicion .)
+
+  ! I_LL            [ reduce using rule 76 (condicion -> operando tipoconector condicion .) ]
+  ! D_PAR           [ reduce using rule 76 (condicion -> operando tipoconector condicion .) ]
+  ! PUNTO_COMA      [ reduce using rule 76 (condicion -> operando tipoconector condicion .) ]
+
+
+state 132
+
+    (49) otravariable -> ID asignarvalor COMA . otravariable
+    (46) otravariable -> . ID
+    (47) otravariable -> . ID COMA otravariable
+    (48) otravariable -> . ID asignarvalor
+    (49) otravariable -> . ID asignarvalor COMA otravariable
+
+    ID              shift and go to state 100
+
+
+    otravariable                   shift and go to state 140
+
+state 133
+
+    (47) otravariable -> ID COMA otravariable .
+
+    PUNTO_COMA      reduce using rule 47 (otravariable -> ID COMA otravariable .)
+
+
+
+state 134
+
+    (26) operacioncomun -> operando operador operando operador . operacioncomun
+    (25) operacioncomun -> . operando operador operando
+    (26) operacioncomun -> . operando operador operando operador operacioncomun
+    (27) operacioncomun -> . operando
+    (34) operando -> . NUMERO
+    (35) operando -> . ID
+
+    NUMERO          shift and go to state 37
+    ID              shift and go to state 40
+
+
+    operando                       shift and go to state 79
+    operacioncomun                 shift and go to state 141
+
+state 135
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor . D_PAR I_LL lineacodigo D_LL
+
+    D_PAR           shift and go to state 142
+
+
+
+state 136
+
+    (78) incrementofor -> incrementardisminuir .
+
+    D_PAR           reduce using rule 78 (incrementofor -> incrementardisminuir .)
+
+
+
+state 137
+
+    (77) incrementofor -> cambiarvalor .
+
+    D_PAR           reduce using rule 77 (incrementofor -> cambiarvalor .)
+
+
+
+state 138
+
+    (57) condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .
+
+    SINO            reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    SINO_SI         reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    D_LL            reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    IMPRIMIR        reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    LEER            reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    VAR             reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    ID              reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    MIENTRAS        reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    PARA            reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    SI              reduce using rule 57 (condicionsi -> SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+
+
+
+state 139
+
+    (58) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo . D_LL
+    (59) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo . D_LL condicionsino
+    (4) lineacodigo -> lineacodigo . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            shift and go to state 143
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 35
+
+state 140
+
+    (49) otravariable -> ID asignarvalor COMA otravariable .
+
+    PUNTO_COMA      reduce using rule 49 (otravariable -> ID asignarvalor COMA otravariable .)
+
+
+
+state 141
+
+    (26) operacioncomun -> operando operador operando operador operacioncomun .
+
+    PUNTO_COMA      reduce using rule 26 (operacioncomun -> operando operador operando operador operacioncomun .)
+    D_PAR           reduce using rule 26 (operacioncomun -> operando operador operando operador operacioncomun .)
+
+
+
+state 142
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR . I_LL lineacodigo D_LL
+
+    I_LL            shift and go to state 144
+
+
+
+state 143
+
+    (58) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .
+    (59) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL . condicionsino
+    (58) condicionsino -> . SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+    (59) condicionsino -> . SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL condicionsino
+
+    SINO            reduce using rule 58 (condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL .)
+    SINO_SI         shift and go to state 32
+
+
+    condicionsino                  shift and go to state 145
+
+state 144
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL . lineacodigo D_LL
+    (4) lineacodigo -> . lineacodigo linea
+    (5) lineacodigo -> . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    lineacodigo                    shift and go to state 146
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 26
+
+state 145
+
+    (59) condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL condicionsino .
+
+    SINO            reduce using rule 59 (condicionsino -> SINO_SI I_PAR condicion D_PAR I_LL lineacodigo D_LL condicionsino .)
+
+
+
+state 146
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo . D_LL
+    (4) lineacodigo -> lineacodigo . linea
+    (6) linea -> . imprimir PUNTO_COMA
+    (7) linea -> . leer PUNTO_COMA
+    (8) linea -> . crearvariable PUNTO_COMA
+    (9) linea -> . cambiarvalor PUNTO_COMA
+    (10) linea -> . incrementardisminuir PUNTO_COMA
+    (11) linea -> . ciclocondicion
+    (20) imprimir -> . IMPRIMIR I_PAR tipoimprimir D_PAR
+    (21) leer -> . LEER I_PAR tipoimprimir D_PAR
+    (42) crearvariable -> . VAR ID
+    (43) crearvariable -> . VAR ID asignarvalor
+    (44) crearvariable -> . VAR ID asignarvalor COMA otravariable
+    (45) crearvariable -> . VAR ID COMA otravariable
+    (12) cambiarvalor -> . ID ASIG cambiovalor
+    (17) incrementardisminuir -> . ID tipoincrementardisminuir
+    (50) ciclocondicion -> . condicional
+    (51) ciclocondicion -> . mientras
+    (52) ciclocondicion -> . ciclofor
+    (54) condicional -> . condicionsi
+    (55) condicional -> . condicionsi condicionno
+    (56) condicional -> . condicionsi condicionsino condicionno
+    (53) mientras -> . MIENTRAS condicion I_LL lineacodigo D_LL
+    (81) ciclofor -> . PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL
+    (82) ciclofor -> . ciclofor
+    (57) condicionsi -> . SI I_PAR condicion D_PAR I_LL lineacodigo D_LL
+
+    D_LL            shift and go to state 147
+    IMPRIMIR        shift and go to state 23
+    LEER            shift and go to state 20
+    VAR             shift and go to state 18
+    ID              shift and go to state 19
+    MIENTRAS        shift and go to state 15
+    PARA            shift and go to state 7
+    SI              shift and go to state 10
+
+
+    mientras                       shift and go to state 21
+    leer                           shift and go to state 8
+    cambiarvalor                   shift and go to state 9
+    condicionsi                    shift and go to state 11
+    condicional                    shift and go to state 13
+    ciclofor                       shift and go to state 14
+    ciclocondicion                 shift and go to state 16
+    imprimir                       shift and go to state 17
+    incrementardisminuir           shift and go to state 22
+    crearvariable                  shift and go to state 25
+    linea                          shift and go to state 35
+
+state 147
+
+    (81) ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .
+
+    D_LL            reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    IMPRIMIR        reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    LEER            reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    VAR             reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    ID              reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    MIENTRAS        reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    PARA            reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+    SI              reduce using rule 81 (ciclofor -> PARA I_PAR iniciofor PUNTO_COMA condicion PUNTO_COMA incrementofor D_PAR I_LL lineacodigo D_LL .)
+
+
